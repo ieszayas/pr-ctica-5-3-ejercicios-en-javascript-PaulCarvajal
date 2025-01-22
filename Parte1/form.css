@@ -1,0 +1,23 @@
+
+
+h3{
+    margin-bottom: 40px;
+}
+.img-navbar{
+    height: 40px; /* Ajusta la altura al tamaño deseado */
+    width: auto;  /* Mantén la proporción de la imagen */
+    margin-right: 20px;
+}
+
+footer{
+    z-index: 0;
+    margin: auto;
+}
+
+.mar{
+    margin-bottom: 30px;
+}
+
+.form-check-label {
+    color: black !important;
+}
