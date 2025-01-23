@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="form.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <a href=""><img src="../media/balon-removebg-preview.png" alt="" class="img-navbar"></a>
-            
+
             <a class="navbar-brand" href="#">TodoFutbol</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,105 +46,322 @@
 
     <!--Form-->
     <div class="container mt-5">
-    <div class="row align-items-center">
-        <!-- Columna de la imagen -->
-        <div class="col-md-6">
-            <img src="../media/form.jpg" class="img-fluid mar" alt="Descripción de la imagen">
-        </div>
-        <!-- Columna del formulario -->
-        <div class="col-md-6">
-            <h3>Suscribete para recibir mas notificaciones sobre futbol</h3>
-            <form class="was-validated">
-                <!--Nombre-->
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"><strong>Nombre*</strong></label>
-                    <input type="text" class="form-control has-validation" id="nombre" placeholder="Introduce tu nombre" minlength="4" required>
-                    <div class="invalid-feedback">
-                        Por favor, introduce tu nombre (mínimo 4 caracteres).
-                    </div>
-                </div>
-
-                <!--Apellido-->
-                <div class="mb-3">
-                    <label for="apellido" class="form-label"><strong>Apellido*</strong></label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Introduce tu apellido" required>
-                    <div class="invalid-feedback">
-                        Por favor, introduce tu apellido
-                    </div>
-                </div>
-
-                <!-- Fecha de Nacimiento -->
-                <div class="mb-3">
-                    <label for="fecha" class="form-label"><strong>Fecha de Nacimiento</strong></label>
-                    <input type="date" class="form-control" id="birthdate" max="2007-01-14" required>
-                    <div class="invalid-feedback">
-                        Introduce una fecha de Nacimiento (Debe ser mayor de 18 años)
-                    </div>
-                </div>
-                <!--Correo-->
-                <div class="mb-3">
-                    <label for="email" class="form-label"><strong>Correo Electrónico*</strong></label>
-                    <input type="email" class="form-control" id="email" placeholder="Introduce tu correo" required>
-                    <div class="invalid-feedback">
-                        Introduce un correo valido (ejemplo@dominio.com)
-                    </div>
-                </div>
-
-                <!--Tlf-->
-                <div class="mb-3">
-                    <label for="telefono" class="form-label"><strong>Telefono*</strong></label>
-                    <input type="text" class="form-control" id="telefono" placeholder="Introduce tu telefono" pattern="\d{10}" required>
-                    <div class="invalid-feedback">
-                        El telefono debe contener exactamente 10 digitos.
-                    </div>
-                </div>
-
-                <!--CheckEmail-->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" >
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Deseas recibir correos informando sobre las ultimas noticias
-                    </label>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-                <br><br>
-            </form>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-crossorigin="anonymous">
-</script>
-
-
-<footer class="bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Términos Legales -->
+        <div class="row align-items-center">
+            <!-- Columna de la imagen -->
             <div class="col-md-6">
-                <h5>Términos Legales</h5>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-file-earmark-pdf-fill"></i> <a href="#" class="text-white"> Leer Términos</a></li>
-                </ul>
+                <img src="../media/form.jpg" class="img-fluid mar" alt="Descripción de la imagen">
+            </div>
+            <!-- Columna del formulario -->
+            <div class="col-md-6">
+                <h3>Suscribete para recibir mas notificaciones sobre futbol</h3>
+                <form id="formulario">
+                    <!--Nombre-->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"><strong>Nombre*</strong></label>
+                        <input type="text" class="form-control has-validation" id="nombre"
+                            placeholder="Introduce tu nombre" minlength="4" required>
+                        <div class="invalid-feedback">
+                            Por favor, introduce tu nombre (mínimo 4 caracteres).
+                        </div>
+                    </div>
+
+                    <!--Apellido-->
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label"><strong>Apellido*</strong></label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Introduce tu apellido"
+                            required>
+                        <div class="invalid-feedback">
+                            Por favor, introduce tu apellido
+                        </div>
+                    </div>
+
+                    <!-- Fecha de Nacimiento -->
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label"><strong>Fecha de Nacimiento</strong></label>
+                        <input type="date" class="form-control" id="fecha" max="2007-01-14" required>
+                        <div class="invalid-feedback">
+                            Introduce una fecha de Nacimiento (Debe ser mayor de 18 años)
+                        </div>
+                    </div>
+                    <!--Correo-->
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><strong>Correo Electrónico*</strong></label>
+                        <input type="email" class="form-control" id="email" placeholder="Introduce tu correo" required>
+                        <div class="invalid-feedback">
+                            Introduce un correo valido (ejemplo@dominio.com)
+                        </div>
+                    </div>
+
+                    <!--Tlf-->
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label"><strong>Telefono*</strong></label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Introduce tu telefono"
+                            pattern="\d{9}" required>
+                        <div class="invalid-feedback">
+                            El telefono debe contener exactamente 9 digitos.
+                        </div>
+                    </div>
+
+                    <!--CheckEmail-->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkbox" required>
+                        <label class="form-check-label" for="terms">Deseo recibir correos informando sobre las ultimas
+                            noticias</label>
+                        <div class="invalid-feedback">
+                            Debes darle al checkbox
+                        </div>
+                    </div>
+                    <br>
+
+                    <!--Boton para enviar-->
+                    <button class="btn btn-primary" type="submit" id="btnEnviar">Enviar</button>
+                    <button class="btn btn-secondary" type="button" id="btnLimpiar">Limpiar datos</button>
+                    <br><br>
+                </form>
             </div>
 
-            <!-- Nuestras Redes -->
-            <div class="col-md-6">
-                <h5>Nuestras Redes</h5>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-instagram"></i> <a href="https://www.instagram.com" class="text-white" target="_blank"> Instagram</a></li>
-                    <li><i class="bi bi-facebook"></i> <a href="https://www.facebook.com" class="text-white" target="_blank"> Facebook</a></li>
-                    <li><i class="bi bi-tiktok"></i> <a href="https://www.tiktok.com" class="text-white" target="_blank"> TikTok</a></li>
-                </ul>
+        </div>
+
+
+    </div>
+
+    <!-- Toast para notificaciones -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <!-- Toast de limpiar -->
+        <div id="toastLimpiar" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Los campos del formulario han sido limpiados.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+        <!-- Toast de envío -->
+        <div id="toastEnviar" class="toast align-items-center text-bg-info border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    El formulario se ha enviado correctamente.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
             </div>
         </div>
     </div>
-</footer>
- 
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Términos Legales -->
+                <div class="col-md-6">
+                    <h5>Términos Legales</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-file-earmark-pdf-fill"></i> <a href="#" class="text-white"> Leer
+                                Términos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Nuestras Redes -->
+                <div class="col-md-6">
+                    <h5>Nuestras Redes</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-instagram"></i> <a href="https://www.instagram.com" class="text-white"
+                                target="_blank"> Instagram</a></li>
+                        <li><i class="bi bi-facebook"></i> <a href="https://www.facebook.com" class="text-white"
+                                target="_blank"> Facebook</a></li>
+                        <li><i class="bi bi-tiktok"></i> <a href="https://www.tiktok.com" class="text-white"
+                                target="_blank"> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
 </body>
+<script>
+    // Obtener elementos del DOM
+    const formulario = document.getElementById('formulario');
+    const btnLimpiar = document.getElementById('btnLimpiar');
+    const nombre = document.getElementById('nombre');
+    const apellido = document.getElementById('apellido');
+    const email = document.getElementById('email');
+    const fecha = document.getElementById('fecha');
+    const telefono = document.getElementById('telefono');
+    const checkbox = document.getElementById('checkbox');
+
+    // Validación de los campos
+
+    // Validación del Nombre
+    function validarNombre() {
+        const valor = nombre.value.trim();
+        nombre.classList.remove('is-valid', 'is-invalid');
+
+        // Validar si el campo está vacío
+        if (valor === '') {
+            nombre.nextElementSibling.textContent = 'El campo Nombre no puede estar vacío.';
+            nombre.classList.add('is-invalid');
+            return false;
+        }
+
+        // Validar si el nombre contiene solo letras
+        else if (!/^[a-zA-Z]+$/.test(valor)) {
+            nombre.nextElementSibling.textContent = 'El Nombre solo puede contener letras (a-z, A-Z).';
+            nombre.classList.add('is-invalid');
+            return false;
+        } else {
+            nombre.nextElementSibling.textContent = '¡Nombre válido!';
+            nombre.classList.add('is-valid');
+            return true;
+        }
+    }
+
+
+    // Validación del apellido
+    function validarApellido() {
+        const valor = apellido.value.trim();
+        //ver esto
+        apellido.classList.remove('is-valid', 'is-invalid');
+
+        // Validar si el campo está vacío
+        if (valor === '') {
+            apellido.nextElementSibling.textContent = 'El campo Apellido no puede estar vacío.';
+            apellido.classList.add('is-invalid');
+            return false;
+        }
+
+        // Validar si el apellido contiene solo letras
+        else if (!/^[a-zA-Z]+$/.test(valor)) {
+            apellido.nextElementSibling.textContent = 'El Apellido solo puede contener letras (a-z, A-Z).';
+            apellido.classList.add('is-invalid');
+            return false;
+        } else {
+            apellido.nextElementSibling.textContent = 'Apellido válido!';
+            apellido.classList.add('is-valid');
+            return true;
+        }
+    }
+
+    //Validacion fecha
+    function validarFechaNacimiento() {
+        const valor = fecha.value.trim();
+        fecha.classList.remove('is-valid', 'is-invalid');
+        if (valor === '') {
+            fecha.nextElementSibling.textContent = 'El campo Fecha de Nacimiento no puede estar vacío.';
+            fecha.classList.add('is-invalid');
+            return false;
+        } else {
+            fecha.nextElementSibling.textContent = '¡Fecha válida!';
+            fecha.classList.add('is-valid');
+            return true;
+        }
+    }
+
+
+    //Validacion Email
+    function validarEmail() {
+        const valor = email.value.trim();
+        email.classList.remove('is-valid', 'is-invalid');
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (valor === '') {
+            email.nextElementSibling.textContent = 'El campo Email no puede estar vacío.';
+            email.classList.add('is-invalid');
+            return false;
+        } else if (!regexEmail.test(valor)) {
+            email.nextElementSibling.textContent = 'Por favor, introduce un correo electrónico válido.';
+            email.classList.add('is-invalid');
+            return false;
+        } else {
+            email.nextElementSibling.textContent = '¡Correo válido!';
+            email.classList.add('is-valid');
+            return true;
+        }
+    }
+
+    //Validar telefono
+    function validarTelefono() {
+        const valor = telefono.value.trim();
+        //ver esto
+        telefono.classList.remove('is-valid', 'is-invalid');
+
+        // Validar si el campo está vacío
+        if (valor === '') {
+            telefono.nextElementSibling.textContent = 'El campo telefono no puede estar vacío.';
+            telefono.classList.add('is-invalid');
+            return false;
+        }
+
+        // Validar si el telefono contiene solo numeros
+        else if (!/^\d+$/.test(valor)) {
+            telefono.nextElementSibling.textContent = 'El telefono solo puede contener numeros [0-9]';
+            telefono.classList.add('is-invalid');
+            return false;
+        } else {
+            telefono.nextElementSibling.textContent = 'Telefono válido!';
+            telefono.classList.add('is-valid');
+            return true;
+        }
+    }
+
+    // Evento para limpiar los datos del formulario
+    btnLimpiar.addEventListener('click', () => {
+           
+            const toastEnviar = new bootstrap.Toast(document.getElementById('toastLimpiar'));
+            toastEnviar.show();
+            formulario.reset();
+            const campos = [nombre, password, email, birthdate];
+            campos.forEach(campo => {
+                campo.classList.remove('is-valid', 'is-invalid');
+                campo.nextElementSibling.textContent = '';
+            });
+        });
+
+    // Evento para enviar el formulario
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const esNombreValido = validarNombre();
+        const esApellidoValido = validarApellido();
+        const esTelofonoValido = validarTelefono();
+        const esEmailValido = validarEmail();
+        const esFechaValida = validarFechaNacimiento();
+
+        // Verificar si el checkbox de términos está marcado
+        if (!checkbox.checked) {
+            checkbox.classList.add('is-invalid');
+            return;
+        } else {
+            checkbox.classList.remove('is-invalid');
+        }
+
+        if (esNombreValido && esApellidoValido && esTelofonoValido && esEmailValido && esFechaValida && checkbox.checked) {
+            const toastEnviar = new bootstrap.Toast(document.getElementById('toastEnviar'));
+            toastEnviar.show();
+            formulario.reset(); // Limpia el formulario
+
+            // Eliminar clases y mensajes de validación
+            const campos = [nombre, apellido, telefono, email, fecha];
+            campos.forEach(campo => {
+                campo.classList.remove('is-valid', 'is-invalid');
+                campo.nextElementSibling.textContent = '';
+            });
+        }
+    });
+
+    // Validación en tiempo real
+    nombre.addEventListener('input', validarNombre);
+    apellido.addEventListener('input', validarApellido);
+    telefono.addEventListener('input', validarTelefono);
+    email.addEventListener('input', validarEmail);
+    fecha.addEventListener('input', validarFechaNacimiento);
+</script>
 
 </html>
