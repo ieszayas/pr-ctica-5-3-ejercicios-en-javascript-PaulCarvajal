@@ -1,0 +1,28 @@
+ /* Ajuste del tamaño del carrusel */
+#carouselExample {
+    width: 80%;
+    /* El carrusel ocupa un 80% del ancho de su contenedor */
+    max-width: 1000px;
+    /* Máximo tamaño de ancho para evitar que se estire mucho */
+    height: 60vh;
+    /* Ocupa un 60% de la altura de la ventana */
+    margin: 0 auto;
+    /* Centrado en la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* Ajustes para las imágenes dentro del carrusel */
+.carousel-inner .carousel-item img {
+    width: 70%;
+    height: 50vh;
+    object-fit: contain;
+    /* Hace que la imagen se ajuste sin perder la proporción */
+}
+
+.img-navbar{
+    height: 40px; /* Ajusta la altura al tamaño deseado */
+    width: auto;  /* Mantén la proporción de la imagen */
+    margin-right: 20px;
+}
