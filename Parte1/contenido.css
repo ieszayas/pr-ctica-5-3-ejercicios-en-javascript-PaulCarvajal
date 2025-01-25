@@ -26,3 +26,20 @@
     width: auto;  /* Mantén la proporción de la imagen */
     margin-right: 20px;
 }
+
+.toggle-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*Cambiar al modo oscuro*/
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
