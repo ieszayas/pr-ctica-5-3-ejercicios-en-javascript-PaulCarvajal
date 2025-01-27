@@ -1,22 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="contenido.css">
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="contenido.css" />
 </head>
 
 <body>
-
   <!--barra de navegacion-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-    <div class="container-fluid"> 
+    <div class="container-fluid">
       <!--Imagen logo-->
-      <a href=""><img src="../media/balon-removebg-preview.png" alt="" class="img-navbar"></a>
+      <a href=""><img src="../media/balon-removebg-preview.png" alt="" class="img-navbar" /></a>
       <a class="navbar-brand" href="#">TodoFutbol</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,23 +34,34 @@
               Más
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="formulario.html">Suscribete</a></li>
+              <li>
+                <a class="dropdown-item" href="formulario.html">Suscribete</a>
+              </li>
             </ul>
           </li>
         </ul>
       </div>
-      <button class="toggle-button" onclick="modoOscuro()">Pulsame para cambiar de Modo</button>
+      <button class="toggle-button" onclick="modoOscuro()">
+        Pulsame para cambiar de Modo
+      </button>
     </div>
   </nav>
 
   <h2></h2>
-  <br>
+  <br />
 
   <!--Tabla-->
   <div class="container">
+    <form id="colorForm">
+      <label for="tableColor">Selecciona el color para la tabla:</label>
+      <input type="color" id="tableColor" name="tableColor" value="#ffffff" />
+    </form>
+
     <!--la clase container hace que el contenido esté centrado con márgenes laterales y no ocupe toda la pantalla.-->
-    <table class="table table-light table-hover table-bordered caption-top text-center">
-      <caption>Todos los campeones de la champions league</caption>
+    <table class="table table-light table-hover table-bordered caption-top text-center" id="dataTable">
+      <caption>
+        Todos los campeones de la champions league
+      </caption>
       <thead class="table-dark">
         <tr>
           <th scope="col"></th>
@@ -63,7 +73,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">2025 Reloj </th>
+          <th scope="row">2025 Reloj</th>
           <td>Lisboa</td>
           <td>Barça</td>
           <td>Liverpool</td>
@@ -131,7 +141,7 @@
           <td>Milan</td>
           <td>Real Madrid</td>
           <td>Atletico</td>
-          <td>1 - 1 (5-3) </td>
+          <td>1 - 1 (5-3)</td>
         </tr>
         <tr>
           <th scope="row">2015</th>
@@ -142,24 +152,22 @@
         </tr>
       </tbody>
     </table>
-
-
   </div>
-  <br>
+  <br />
   <!--Carrusel de imagenes-->
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../media/bayern2020.jpg" class="d-block w-100" alt="Bayern2020">
+        <img src="../media/bayern2020.jpg" class="d-block w-100" alt="Bayern2020" />
       </div>
       <div class="carousel-item">
-        <img src="../media/madrid2024.jpg" class="d-block w-100" alt="Madrid2024">
+        <img src="../media/madrid2024.jpg" class="d-block w-100" alt="Madrid2024" />
       </div>
       <div class="carousel-item">
-        <img src="../media/trofeo.jpg" class="d-block w-100" alt="trofeo de la champions">
+        <img src="../media/trofeo.jpg" class="d-block w-100" alt="trofeo de la champions" />
       </div>
       <div class="carousel-item">
-        <img src="../media/barca2015.jpg" class="d-block w-100" alt="barca2015">
+        <img src="../media/barca2015.jpg" class="d-block w-100" alt="barca2015" />
       </div>
     </div>
 
@@ -172,49 +180,145 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <br><br>
-  <div>Prediccion de Kevin </div>
-  <p> 3 - 2</p>
-  <p> 2 Yamil 1 Lewy  - 1 Salah 1 Gakpo</p>
+  <br /><br />
+  <div>Prediccion de Kevin</div>
+  <p>3 - 2</p>
+  <p>2 Yamil 1 Lewy - 1 Salah 1 Gakpo</p>
 
-  <div>Prediccion de Pol </div>
-  <p> 3 - 1</p>
-  <p> 1 Rapiña 1 Kounde 1 Ferran  - 1 Trent </p>  
-<footer class="bg-dark text-white py-4">
-  <div class="container">
+  <div>Prediccion de Pol</div>
+  <p>3 - 1</p>
+  <p>1 Rapiña 1 Kounde 1 Ferran - 1 Trent</p>
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
       <div class="row">
-          <!-- Términos Legales -->
-          <div class="col-md-6">
-              <h5>Términos Legales</h5>
-              <ul class="list-unstyled">
-                  <li><i class="bi bi-file-earmark-pdf-fill"></i> <a href="#" class="text-white"> Leer Términos</a></li>
-              </ul>
-          </div>
+        <!-- Términos Legales -->
+        <div class="col-md-6">
+          <h5>Términos Legales</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="bi bi-file-earmark-pdf-fill"></i>
+              <a href="#" class="text-white"> Leer Términos</a>
+            </li>
+          </ul>
+        </div>
 
-          <!-- Nuestras Redes -->
-          <div class="col-md-6">
-              <h5>Nuestras Redes</h5>
-              <ul class="list-unstyled">
-                  <li><i class="bi bi-instagram"></i> <a href="https://www.instagram.com" class="text-white" target="_blank"> Instagram</a></li>
-                  <li><i class="bi bi-facebook"></i> <a href="https://www.facebook.com" class="text-white" target="_blank"> Facebook</a></li>
-                  <li><i class="bi bi-tiktok"></i> <a href="https://www.tiktok.com" class="text-white" target="_blank"> TikTok</a></li>
-              </ul>
-          </div>
+        <!-- Nuestras Redes -->
+        <div class="col-md-6">
+          <h5>Nuestras Redes</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="bi bi-instagram"></i>
+              <a href="https://www.instagram.com" class="text-white" target="_blank">
+                Instagram</a>
+            </li>
+            <li>
+              <i class="bi bi-facebook"></i>
+              <a href="https://www.facebook.com" class="text-white" target="_blank">
+                Facebook</a>
+            </li>
+            <li>
+              <i class="bi bi-tiktok"></i>
+              <a href="https://www.tiktok.com" class="text-white" target="_blank">
+                TikTok</a>
+            </li>
+          </ul>
+        </div>
       </div>
-  </div>
-</footer>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    </div>
+  </footer>
 
-    <script>
-      function modoOscuro(){
-        const body = document.body;
-        body.classList.toggle('dark-mode');
-        
+  <script>
+    src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
+    integrity = "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz";
+    crossorigin = "anonymous";
+  </script>
+
+  <script>
+    function modoOscuro() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+
+      const tabla = document.querySelector(".table");
+      const tableHeader = document.querySelector(".table thead");
+      const caption = document.querySelector(".table caption");
+
+      const footer = document.querySelector("footer");
+      const footerLinks = document.querySelectorAll("footer a"); // Seleccionar todos los enlaces dentro del footer
+
+      //cambiar footer
+      if (footer.classList.contains("bg-dark")) {
+        footer.classList.remove("bg-dark");
+        footer.classList.add("bg-light");
+        footer.classList.remove("text-white");
+        footer.classList.add("text-dark");
+      } else {
+        footer.classList.remove("bg-light");
+        footer.classList.add("bg-dark");
+        footer.classList.remove("text-dark");
+        footer.classList.add("text-white");
       }
-    </script>
+
+      footerLinks.forEach((link) => {
+        if (link.classList.contains("text-white")) {
+          link.classList.remove("text-white");
+          link.classList.add("text-dark");
+        } else {
+          link.classList.remove("text-dark");
+          link.classList.add("text-white");
+        }
+      });
+
+      // Asegurar que las clases de los íconos no sean alteradas
+      const footerIcons = footer.querySelectorAll("i");
+      footerIcons.forEach((icon) => {
+        if (!icon.classList.contains("bi")) return; // Preservar clases Bootstrap Icons
+      });
+
+      //cambiar tabla
+      if (tabla.classList.contains("table-light")) {
+        tabla.classList.remove("table-light");
+        tabla.classList.add("table-dark");
+      } else {
+        tabla.classList.remove("table-dark");
+        tabla.classList.add("table-light");
+      }
+
+      //cambiar cabecera
+      if (tableHeader.classList.contains("table-dark")) {
+        tableHeader.classList.remove("table-dark");
+        tableHeader.classList.add("table-light");
+      } else {
+        tableHeader.classList.remove("table-light");
+        tableHeader.classList.add("table-dark");
+      }
+
+      //cambair caption
+      if (caption.classList.contains("text-light")) {
+        caption.classList.remove("text-light");
+        caption.classList.add("text-dark");
+      } else {
+        caption.classList.remove("text-dark");
+        caption.classList.add("text-light");
+      }
+    }
+
+  </script>
+
+  <script>
+    // Asegúrate de que el DOM esté completamente cargado antes de ejecutar el código
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtén el input color y la tabla
+      const colorPicker = document.getElementById("tableColor");
+      const table = document.getElementById("dataTable");
+
+      // Añade un evento para cambiar el color de fondo de la tabla
+      colorPicker.addEventListener("input", function () {
+        const selectedColor = this.value; // Obtiene el color seleccionado
+        table.style.backgroundColor = selectedColor; // Cambia el fondo de la tabla
+      });
+    });
+  </script>
+
 </body>
 
 </html>
