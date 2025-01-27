@@ -44,3 +44,7 @@ body.dark-mode {
     color: #ffffff;
 }
 
+
+#dataTable {
+    background-color: white; /* Sobrescribiría el color que aplica el script */
+}
