@@ -83,15 +83,25 @@ function modoOscuro() {
 }
 
 
+//funcion para cambiar de color la tabla
+document.addEventListener("DOMContentLoaded", function () {
+    // Escuchar el cambio del input de color
+    document.getElementById("tableColor").addEventListener("input", function() {
+        const selectedColor = this.value;  // Obtener el valor del color seleccionado
 
-document.addEventListener("DOMContentLoaded", () => {
-    const colorPicker = document.getElementById("tableColor");
-    const table = document.getElementById("dataTable");
+        // Cambiar el color del encabezado de la tabla
+        const header = document.querySelector("#dataTable thead");
+        header.style.backgroundColor = selectedColor;  // Cambiar el color del encabezado
 
-    colorPicker.addEventListener("input", (event) => {
-        table.style.backgroundColor = event.target.value; // Eliminar "important"
+        // Si quieres, también puedes cambiar el color de las celdas del encabezado
+        const headerCells = header.querySelectorAll("th");
+        headerCells.forEach(cell => {
+            cell.style.backgroundColor = selectedColor;
+        });
     });
 });
+
+
 
 
 
@@ -175,3 +185,115 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000); // Actualizar cada segundo
 updateCountdown(); // Llamar inmediatamente para inicializar
+
+
+/*
+const API_URL = "http://localhost:8080/api/champions"; // API corriendo en tu PC
+fetch(API_URL)
+    .then(response => response.json())
+    .then(data => {
+        console.log("Datos recibidos de la API:", data); // 🛠 Agregado para depurar
+        const tableBody = document.getElementById("champions-table");
+        tableBody.innerHTML = "";
+
+        data.forEach(champ => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${champ.year}</td>
+                <td>${champ.sede}</td>
+                <td>${champ.campeon}</td>
+                <td>${champ.subcampeon}</td>
+                <td>${champ.resultado}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => console.error("Error al obtener los datos:", error));
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const apiUrl = "http://localhost:8080/api/champions"; // Reemplaza con tu API
+
+    // Función para cargar la tabla desde la API
+    function loadChampions() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById("champions-table");
+                tableBody.innerHTML = ""; // Limpiar tabla
+                data.forEach(champion => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${champion.year}</td>
+                        <td>${champion.sede}</td>
+                        <td>${champion.campeon}</td>
+                        <td>${champion.subcampeon}</td>
+                        <td>${champion.resultado}</td>
+                        <td class="transparente"><button class="eliminar-btn" data-year="${champion.year}"><i class="bi bi-trash-fill"></i></button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                 // Agregar evento de eliminación a los botones
+                 const eliminarBtns = document.querySelectorAll('.eliminar-btn');
+                 eliminarBtns.forEach(btn => {
+                     btn.addEventListener('click', function () {
+                         const year = btn.getAttribute('data-year');
+                         eliminarChampion(year, btn.closest('tr')); // Pasar también la fila para eliminarla
+                     });
+                 });
+            })
+            .catch(error => console.error("Error cargando campeones:", error));
+    }
+
+    // Función para eliminar un campeón
+    function eliminarChampion(year, row) {
+        if (!confirm("¿Seguro que quieres eliminar esta fila?")) return;
+
+        fetch(`${apiUrl}/${year}`, { method: "DELETE" })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo eliminar el campeón");
+                }
+                return response.text();
+            })
+            .then(() => {
+                row.remove(); // Eliminar la fila del DOM
+            })
+            .catch(error => console.error("Error eliminando:", error));
+    }
+
+
+
+//metodo para que el usuario meta celdas
+document.getElementById("championForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita que la página se recargue
+
+    // Capturar los valores del formulario
+    const newChampion = {
+        year: document.getElementById("year").value,
+        sede: document.getElementById("sede").value,
+        campeon: document.getElementById("campeon").value,
+        subcampeon: document.getElementById("subcampeon").value,
+        resultado: document.getElementById("resultado").value
+    };
+
+    // Enviar el nuevo campeón a la API
+    fetch(apiUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newChampion)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Campeón agregado:", data);
+        loadChampions(); // Recargar la tabla con el nuevo dato
+        document.getElementById("championForm").reset(); // Limpiar formulario
+    })
+    .catch(error => console.error("Error agregando campeón:", error));
+});
+
+// Cargar la tabla al inicio
+loadChampions();
+});
