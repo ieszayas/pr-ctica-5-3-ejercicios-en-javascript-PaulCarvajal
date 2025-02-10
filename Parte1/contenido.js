@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 const tableBody = document.getElementById("champions-table");
                 tableBody.innerHTML = ""; // Limpiar tabla
+                
                 data.forEach(champion => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
@@ -245,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error cargando campeones:", error));
     }
 
-    // Función para eliminar un campeón
+    // Función para eliminar una celda
     function eliminarChampion(year, row) {
         if (!confirm("¿Seguro que quieres eliminar esta fila?")) return;
 
@@ -277,7 +278,7 @@ document.getElementById("championForm").addEventListener("submit", function (eve
         resultado: document.getElementById("resultado").value
     };
 
-    // Enviar el nuevo campeón a la API
+    // Enviar el nuevo dato a la API
     fetch(apiUrl, {
         method: "POST",
         headers: {
