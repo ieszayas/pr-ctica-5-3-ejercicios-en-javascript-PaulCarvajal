@@ -101,11 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-
-
 // Variable para rastrear la imagen activa en el carrusel
 let currentImageIndex = 0;
 let imageDescriptions = [
@@ -131,6 +126,7 @@ function showImage(imgElement, description) {
     const modalContent = document.getElementById("modal-content");
     modalContent.style.textAlign = 'center'; // Centra el contenido del modal
 }
+
 
 // Función para pasar a la siguiente imagen del carrusel
 function nextImage() {
@@ -185,31 +181,6 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000); // Actualizar cada segundo
 updateCountdown(); // Llamar inmediatamente para inicializar
-
-
-/*
-const API_URL = "http://localhost:8080/api/champions"; // API corriendo en tu PC
-fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
-        console.log("Datos recibidos de la API:", data); // 🛠 Agregado para depurar
-        const tableBody = document.getElementById("champions-table");
-        tableBody.innerHTML = "";
-
-        data.forEach(champ => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${champ.year}</td>
-                <td>${champ.sede}</td>
-                <td>${champ.campeon}</td>
-                <td>${champ.subcampeon}</td>
-                <td>${champ.resultado}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    })
-    .catch(error => console.error("Error al obtener los datos:", error));
-*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = "http://localhost:8080/api/champions"; // Reemplaza con tu API
