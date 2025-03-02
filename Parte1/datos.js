@@ -1,15 +1,18 @@
-
-// Referencia al select y al área de contenido
+// Referencia al elemento <select> que permite al usuario elegir el contenido
 const selector = document.getElementById('contentSelector');
+// Referencia al área donde se mostrará el contenido correspondiente a la opción elegida
 const contentArea = document.getElementById('contentArea');
 
-// Función para manejar cambios en el select
+// Se añade un listener para detectar cuando cambia la selección en el <select>
 selector.addEventListener('change', function () {
-    const selectedValue = selector.value; // Obtén el valor seleccionado
+    // Se obtiene el valor seleccionado del <select>
+    const selectedValue = selector.value; // Valor de la opción seleccionada
 
-    // Cambia el contenido en función de la opción seleccionada
+    // Según el valor seleccionado, se mostrará contenido distinto en el área designada
     switch (selectedValue) {
+        // Caso para la opción '1'
         case '1':
+            // Se asigna un bloque de HTML específico a contentArea para la opción 1
             contentArea.innerHTML = `
             <h4>Conoce más sobre lo que paso ese año...</h4>
                  <div class="container text-center espacio ">
@@ -52,10 +55,13 @@ selector.addEventListener('change', function () {
                            </div> 
                     </div>
                 </div>
-                `
-                ;
+                `;
+            // Se rompe el switch para no ejecutar otros casos
             break;
+
+        // Caso para la opción '2'
         case '2':
+            // Se asigna otro bloque de HTML específico a contentArea para la opción 2
             contentArea.innerHTML = `
             <h4>Conoce más sobre lo que paso ese año...</h4>
                  <div class="container text-center espacio ">
@@ -97,13 +103,15 @@ selector.addEventListener('change', function () {
                            </div> 
                     </div>
                 </div>
-            `
-                ;
+            `;
+            // Se rompe el switch para no ejecutar otros casos
             break;
-        case '3':
-            contentArea.innerHTML = "Has seleccionado la <strong>Opción 3</strong>. Este es un contenido diferente.";
-            break;
+
+    
+
+        // Caso por defecto: si no se selecciona ninguna opción válida
         default:
+            // Se muestra un mensaje indicando que se debe seleccionar una opción
             contentArea.innerHTML = "Por favor, selecciona una opción del menú desplegable para ver el contenido aquí.";
             break;
     }
