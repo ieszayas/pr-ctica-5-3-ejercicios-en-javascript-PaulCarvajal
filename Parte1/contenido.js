@@ -269,3 +269,71 @@ document.getElementById("championForm").addEventListener("submit", function (eve
 // Cargar la tabla al inicio
 loadChampions();
 });
+
+//funcion para dibujar la grafica
+document.addEventListener("DOMContentLoaded", function () {
+    // Código para el gráfico de audiencia
+    var ctx = document.getElementById('audienceChart').getContext('2d');
+    var audienceChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015'],
+        datasets: [{
+          label: 'Audiencia (millones)',
+          data: [40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20],
+          // Para asignar un color distinto a cada barra:
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(199, 199, 199, 0.2)',
+        'rgba(83, 102, 255, 0.2)',
+        'rgba(255, 205, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(54, 162, 235, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(199, 199, 199, 1)',
+        'rgba(83, 102, 255, 1)',
+        'rgba(255, 205, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(54, 162, 235, 1)'
+      ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Audiencia (millones)'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Año'
+            }
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Audiencia de la Final de Champions League por Año'
+          }
+        }
+      }
+    });
+  });
