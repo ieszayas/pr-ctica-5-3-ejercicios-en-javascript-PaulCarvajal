@@ -2,12 +2,13 @@
 
 
 ## Índice  
-1. [Introducción](#1-introducción)  
-2. [Estructura del Proyecto](#2-estructura-del-proyecto)  
-3. [Librerías y Recursos Externos](#3-librerías-y-recursos-externos)  
-4. [Funcionalidades Interesantes](#4-funcionalidades-interesantes)  
-5. [Validaciones](#5-validaciones)  
-6. [Conclusión](#6-conclusión)  
+1. [Introducción](#1-introducción) 
+2. [Requisitos](#2-requisitos)
+2. [Estructura del Proyecto](#3-estructura-del-proyecto)  
+3. [Librerías y Recursos Externos](#4-librerías-y-recursos-externos)  
+4. [Funcionalidades Interesantes](#5-funcionalidades-interesantes)  
+5. [Validaciones](#6-validaciones)  
+6. [Conclusión](#7-conclusión)  
 
 ---
 
@@ -16,9 +17,13 @@ TodoFutbol es una plataforma web interactiva centrada en la UEFA Champions Leagu
 
 ---
 
-## 2. Estructura del Proyecto  
+## 2. Requisitos  
+Para que la web funcione correctamente, es necesario ejecutar un archivo en **Maven** llamado **PaqueteApi**. Este archivo proporciona la API necesaria para las operaciones CRUD. Si no está en ejecución, no se podrá acceder a las funciones de la API y la web no mostrará los datos dinámicos.
 
-### 2.1 Archivos Principales:  
+--- 
+## 3. Estructura del Proyecto  
+
+### 3.1 Archivos Principales:  
 - **`contenido.html`**  
    - **Función**: Página principal con componentes interactivos.  
    - **Componentes Clave**:  
@@ -61,13 +66,13 @@ TodoFutbol es una plataforma web interactiva centrada en la UEFA Champions Leagu
      - Formato de email y teléfono (`pattern="\d{9}"`).  
      - Edad mínima (18 años).  
 
-### 2.2 Carpetas y Recursos:  
+### 3.2 Carpetas y Recursos:  
 - **`media/`**: Almacena imágenes del carrusel, logos y fondos.  
 - **CSS modular**: Estilos separados por páginas (`contenido.css`, `datos.css`, `form.css`).
 
 ---
 
-## 3. Librerías y Recursos Externos  
+## 4. Librerías y Recursos Externos  
 | Recurso               | Uso                                                                     |  
 |-----------------------|-------------------------------------------------------------------------|  
 | **Bootstrap 5.3**     | Maquetación responsiva, componentes (navbar, modal, Toast).            |  
@@ -77,36 +82,36 @@ TodoFutbol es una plataforma web interactiva centrada en la UEFA Champions Leagu
 
 ---
 
-## 4. Funcionalidades Interesantes  
+## 5. Funcionalidades Interesantes  
 
-### 4.1 Modo Oscuro Adaptativo  
+### 5.1 Modo Oscuro Adaptativo  
 - Alterna entre temas sin recargar la página.  
 - Afecta a todos los componentes: body, tabla, footer y gráfico.  
 - Persistencia visual mediante clases CSS (`dark-mode`).  
 
-### 4.2 Interacción con API Local  
+### 5.2 Interacción con API Local  
 - **CRUD Completo**:  
   - *CREATE*: Añade registros desde el formulario.  
   - *DELETE*: Elimina filas con confirmación interactiva.  
   - *READ*: Carga datos iniciales al iniciar la página.  
 
-### 4.3 Carrusel + Modal Integrado  
+### 5.3 Carrusel + Modal Integrado  
 - Las imágenes del carrusel pueden ampliarse en un modal con descripciones únicas.  
 - Botón "Pasar imagen" para navegar sin cerrar el modal.  
 
-### 4.4 Gráfico Interactivo  
+### 5.4 Gráfico Interactivo  
 - Actualiza el color de la cuadrícula al cambiar al modo oscuro.  
 - Datos estáticos pero estructurados para futura escalabilidad.  
 
-### 4.5 Validaciones en Tiempo Real  
+### 5.5 Validaciones en Tiempo Real  
 - Feedback inmediato con clases de Bootstrap (`is-valid`, `is-invalid`).  
 - Regex aplicados mientras el usuario escribe.
 
 ---
 
-## 5. Validaciones  
+## 6. Validaciones  
 
-### 5.1 Formulario de Suscripción:  
+### 6.1 Formulario de Suscripción:  
 - **Nombre/Apellido**:  
    - Solo caracteres alfabéticos.  
    - Mínimo 4 letras.  
@@ -119,13 +124,13 @@ TodoFutbol es una plataforma web interactiva centrada en la UEFA Champions Leagu
 - **Checkbox Obligatorio**:  
    - Aceptación de términos para enviar el formulario.
 
-### 5.2 Mecanismos de Feedback:  
+### 6.2 Mecanismos de Feedback:  
 - Mensajes de error bajo cada campo.  
 - Toast de Bootstrap para confirmar acciones.
 
 ---
 
-## 6. Conclusión  
+## 7. Conclusión  
 TodoFutbol representa un esfuerzo integral por aplicar los conocimientos adquiridos en el ciclo de DAM, integrando tecnologías frontend y backend de manera cohesiva. El proyecto no solo cumple con los requisitos funcionales (CRUD, validaciones, diseño responsivo), sino que también incorpora elementos innovadores como el modo oscuro adaptativo y la interacción con APIs, demostrando competencia en el manejo de JavaScript moderno y librerías externas.
 
 Durante el desarrollo, se enfrentaron desafíos técnicos como la sincronización del modal con el carrusel y la gestión asíncrona de datos mediante Fetch API, superados mediante investigación y prueba-error. Como aprendizajes clave, destacan la importancia de la modularización del código y la planificación previa de la estructura de datos.
