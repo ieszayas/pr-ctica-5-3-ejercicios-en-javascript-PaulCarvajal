@@ -1,0 +1,61 @@
+ /* Ajuste del tamaño del carrusel */
+#carouselExample {
+    width: 80%;
+    /* El carrusel ocupa un 80% del ancho de su contenedor */
+    max-width: 1000px;
+    /* Máximo tamaño de ancho para evitar que se estire mucho */
+    height: 60vh;
+    /* Ocupa un 60% de la altura de la ventana */
+    margin: 0 auto;
+    /* Centrado en la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* Ajustes para las imágenes dentro del carrusel */
+.carousel-inner .carousel-item img {
+    width: 70%;
+    height: 50vh;
+    object-fit: contain;
+    /* Hace que la imagen se ajuste sin perder la proporción */
+}
+
+.img-navbar{
+    height: 40px; /* Ajusta la altura al tamaño deseado */
+    width: auto;  /* Mantén la proporción de la imagen */
+    margin-right: 20px;
+}
+
+.toggle-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*Cambiar al modo oscuro*/
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+#dataTable {
+    background-color: white; /* Sobrescribiría el color que aplica el script */
+}
+
+.colorBlackButton{
+    background-color: transparent;
+}
+
+.eliminar-btn {
+    background: transparent; /* Sin fondo */
+    border: none; /* Eliminar el borde */
+    cursor: pointer; /* Mostrar el cursor en forma de mano */
+    padding: 0; /* Sin relleno adicional */
+}
